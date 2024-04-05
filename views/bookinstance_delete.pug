@@ -1,0 +1,16 @@
+extends layout
+
+block content
+
+  h1 #{title}: 
+    a(href=bookinstance.url) #{bookinstance._id}
+
+  p #[strong Do you really want to delete this copy?]
+
+  form(method='POST')
+      div.form-group 
+        input#bookinstanceid.form-control(type='hidden', name='bookinstanceid', value=bookinstance._id)
+
+      button.btn.btn-primary(type='submit') Delete 
+      a.btn.btn-primary(href= bookinstance.url) Return 
+
